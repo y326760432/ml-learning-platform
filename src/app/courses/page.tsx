@@ -286,7 +286,7 @@ export default function CoursesPage() {
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
-                    <span>建议按难度从"入门"到"高级"循序渐进学习</span>
+                    <span>建议按难度从&ldquo;入门&rdquo;到&ldquo;高级&rdquo;循序渐进学习</span>
                   </li>
                   <li className="flex items-start">
                     <span className="mr-2">•</span>
