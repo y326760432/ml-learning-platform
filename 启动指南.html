@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLearning 启动指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .method {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 2px solid #e9ecef;
+        }
+        
+        .method h2 {
+            color: #495057;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: normal;
+        }
+        
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        
+        .steps li {
+            counter-increment: step-counter;
+            margin: 15px 0;
+            padding-left: 45px;
+            position: relative;
+        }
+        
+        .steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+            color: #d63384;
+        }
+        
+        .code-block {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: "Courier New", monospace;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, #fff59d 60%);
+            padding: 2px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 MLearning 启动指南</h1>
+        <p class="subtitle">机器学习可视化教学平台</p>
+        
+        <div class="warning">
+            <strong>⚠️ 重要提示：</strong> 由于项目路径包含<span class="highlight">中文字符</span>（非代码、机器学习网站），PowerShell 无法正确处理。请使用以下方法之一启动项目。
+        </div>
+        
+        <div class="method">
+            <h2>
+                方法1：使用批处理文件
+                <span class="badge">推荐</span>
+            </h2>
+            <p>最简单的方式，无需任何命令行操作！</p>
+            <ol class="steps">
+                <li>
+                    <strong>首次安装（只需一次）</strong><br>
+                    双击项目根目录的 <code>install.bat</code> 文件
+                </li>
+                <li>
+                    <strong>启动开发服务器</strong><br>
+                    双击项目根目录的 <code>start-dev.bat</code> 文件
+                </li>
+                <li>
+                    <strong>访问网站</strong><br>
+                    打开浏览器，访问 <code>http://localhost:3000</code>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="method">
+            <h2>方法2：使用命令提示符（CMD）</h2>
+            <p>使用 CMD 而不是 PowerShell，对中文路径支持更好。</p>
+            <ol class="steps">
+                <li>
+                    <strong>打开 CMD</strong><br>
+                    按 <code>Win + R</code>，输入 <code>cmd</code>，回车
+                </li>
+                <li>
+                    <strong>进入项目目录</strong>
+                    <div class="code-block">d:<br>cd cursor-demo\非代码\机器学习网站</div>
+                </li>
+                <li>
+                    <strong>启动开发服务器</strong>
+                    <div class="code-block">npm run dev</div>
+                </li>
+                <li>
+                    <strong>访问网站</strong><br>
+                    浏览器打开 <code>http://localhost:3000</code>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="method">
+            <h2>方法3：重命名文件夹</h2>
+            <p>彻底解决中文路径问题。</p>
+            <ol class="steps">
+                <li>
+                    创建新的英文路径文件夹，例如：
+                    <div class="code-block">D:\mllearning\</div>
+                </li>
+                <li>
+                    将所有项目文件复制到新文件夹
+                </li>
+                <li>
+                    在新位置打开终端（CMD 或 PowerShell 都可以）
+                </li>
+                <li>
+                    运行命令：
+                    <div class="code-block">npm install<br>npm run dev</div>
+                </li>
+            </ol>
+        </div>
+        
+        <div class="success">
+            <strong>✅ 启动成功的标志：</strong><br>
+            <div class="code-block" style="margin-top: 10px;">
+▲ Next.js 14.0.4<br>
+- Local:        http://localhost:3000<br>
+- Network:      http://192.168.x.x:3000<br>
+<br>
+✓ Ready in 2.5s
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center;">
+            <h3>🎯 快速启动</h3>
+            <p style="margin: 15px 0;">最简单的方式：</p>
+            <ol style="display: inline-block; text-align: left; margin: 20px 0;">
+                <li>双击 <code>install.bat</code></li>
+                <li>双击 <code>start-dev.bat</code></li>
+                <li>打开 <code>http://localhost:3000</code></li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>📚 更多详细信息请查看：<code>启动说明-重要.md</code> 或 <code>问题排查.txt</code></p>
+            <p style="margin-top: 10px;">让机器学习触手可及 🎉</p>
+        </div>
+    </div>
+</body>
+</html>
+
