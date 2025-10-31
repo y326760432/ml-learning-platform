@@ -86,17 +86,17 @@ export const module1Courses: Course[] = [
     number: 5,
     title: '过拟合与欠拟合',
     description: '深入理解机器学习中最重要的概念之一。学习如何识别和解决过拟合、欠拟合问题，掌握正则化等技术。',
-    duration: '45分钟',
-    difficulty: '中级',
+    duration: '50-55分钟',
+    difficulty: '进阶',
     objectives: [
       '理解过拟合和欠拟合的概念',
-      '识别和解决这两个问题',
-      '掌握正则化等解决方法',
-      '理解偏差-方差权衡'
+      '识别模型是否过拟合或欠拟合',
+      '掌握防止过拟合的常用方法',
+      '了解偏差-方差权衡原理'
     ],
-    exercises: 0,
-    status: 'coming-soon',
-    fileUrl: ''
+    exercises: 8,
+    status: 'completed',
+    fileUrl: '/content/courses/module-1/lesson-05-过拟合与欠拟合.md'
   },
   {
     id: 'lesson-06',
@@ -191,7 +191,7 @@ export const moduleInfo = {
   name: '模块一：机器学习入门',
   description: '从零开始学习机器学习的基础知识，建立完整的知识体系',
   totalCourses: 10,
-  completedCourses: 2,
+  completedCourses: 5,
   totalDuration: '约10小时',
   difficulty: '入门',
   prerequisites: '无（零基础可学）'

@@ -38,17 +38,7 @@
 
 > 机器学习的目标不是记住训练数据，而是**泛化（Generalization）**到新数据！
 
-```mermaid
-graph LR
-    A[训练数据] --> B[学习模式]
-    B --> C[泛化能力]
-    C --> D[预测新数据]
-    
-    style A fill:#E8F5E9
-    style B fill:#FFF9C4
-    style C fill:#BBDEFB
-    style D fill:#F8BBD0
-```
+![训练过程](/content/images/lesson-04-训练过程.png)
 
 因此，我们需要：
 1. **训练集（Training Set）**：用来训练模型
@@ -61,21 +51,7 @@ graph LR
 
 ### 数据集划分示意图
 
-```mermaid
-graph TD
-    A[原始数据集<br/>100%] --> B[训练集<br/>Training Set<br/>60-80%]
-    A --> C[验证集<br/>Validation Set<br/>10-20%]
-    A --> D[测试集<br/>Test Set<br/>10-20%]
-    
-    B --> E[训练模型参数]
-    C --> F[选择模型/调参]
-    D --> G[评估最终性能]
-    
-    style A fill:#FFE5E5,stroke:#FF6B6B,stroke-width:3px
-    style B fill:#E8F5E9,stroke:#66BB6A,stroke-width:3px
-    style C fill:#FFF9E5,stroke:#FFC107,stroke-width:3px
-    style D fill:#E1F5FE,stroke:#42A5F5,stroke-width:3px
-```
+![数据集划分示意图](/content/images/lesson-04-数据集划分示意图.png)
 
 ### 1️⃣ 训练集（Training Set）
 
@@ -292,26 +268,7 @@ y_test = y[split_point:]
 
 **原理**：将数据分成K份，轮流使用其中1份作为验证集，其余K-1份作为训练集。
 
-```mermaid
-graph TB
-    A[原始数据] --> B[分成K份]
-    B --> C[Fold 1<br/>验证集: □ 训练集: ■■■■]
-    B --> D[Fold 2<br/>验证集: ■ 测试集: ■□■■]
-    B --> E[Fold 3<br/>验证集: ■ 测试集: ■■□■]
-    B --> F[Fold 4<br/>验证集: ■ 测试集: ■■■□]
-    B --> G[Fold 5<br/>验证集: ■ 测试集: ■■■■□]
-    
-    C --> H[5个评估分数]
-    D --> H
-    E --> H
-    F --> H
-    G --> H
-    
-    H --> I[平均分数 = 最终评估]
-    
-    style A fill:#FFE5E5
-    style I fill:#E8F5E9
-```
+![交叉验证](/content/images/lesson-04-交叉验证.png)
 
 #### 代码实现
 
@@ -1002,34 +959,7 @@ score = model.score(X_test, y_test)
 
 ### 决策流程图
 
-```mermaid
-graph TD
-    A[开始] --> B{数据量大小?}
-    B -->|< 1000| C[60/20/20划分]
-    B -->|1000-10000| D[70/15/15划分]
-    B -->|> 10000| E[80/10/10划分]
-    
-    C --> F{时间序列?}
-    D --> F
-    E --> F
-    
-    F -->|是| G[按时间顺序划分]
-    F -->|否| H{类别平衡?}
-    
-    H -->|是| I[随机划分]
-    H -->|否| J[分层划分]
-    
-    G --> K[使用TimeSeriesSplit CV]
-    I --> L[使用K-Fold CV]
-    J --> M[使用Stratified K-Fold CV]
-    
-    K --> N[训练和评估]
-    L --> N
-    M --> N
-    
-    style A fill:#FFE5E5
-    style N fill:#E8F5E9
-```
+![决策流程图](/content/images/lesson-04-决策流程图.png)
 
 ---
 
